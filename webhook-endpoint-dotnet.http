@@ -1,0 +1,6 @@
+@webhook_endpoint_dotnet_HostAddress = http://localhost:5205
+
+GET {{webhook_endpoint_dotnet_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
