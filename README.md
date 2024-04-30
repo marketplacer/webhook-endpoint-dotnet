@@ -18,8 +18,8 @@ This app & associated tutorial is intended to help users new to Marketplacer web
 
 The app is written in C# using .NET 8.0. it is intended to be a lightweight demonstration of the core concepts a user should be aware of when consuming webhooks from Marketplacer.
 
-> [!WARNING]
-> This code is not intended to be a production-ready solution, for more detail please refer to the [license](./LICENSE).
+> [!CAUTION]
+> This project is not intended to be a production-ready solution, nor is it covered by Marketplacer support - for more information on the full terms of use, please refer to the [license](./LICENSE).
 
 Some points to note about this app:
 
