@@ -108,6 +108,7 @@ app.MapPost("/webhook/sequencing", async (HttpContext httpContext, AppDbContext 
     await dbContext.WebhookEvents.AddAsync(webhookEvent);
     await dbContext.SaveChangesAsync();
 
+    
 
 
     //httpContext.Response.StatusCode = StatusCodes.Status200OK;
@@ -134,12 +135,17 @@ app.MapPost("/webhook/payload-parse", async (HttpContext httpContext, AppDbConte
         WebhookPayload = body,
         WebhookEventType = jsonBody!.event_name,
         WebhookObjectType = jsonBody!.payload.data.node.__typename,
-        WebhookObjectId = jsonBody!.payload.data.node.id
+        WebhookObjectId = jsonBody!.payload.data.node.id,
+        CreatedAt = DateTime.Now.ToString()
     };
 
     await dbContext.WebhookEvents.AddAsync(webhookEvent);
     await dbContext.SaveChangesAsync();
 
+    foreach (var header in httpContext.Request.Headers)
+    {
+        Console.WriteLine($"--> {header}");
+    }
 
 
     //httpContext.Response.StatusCode = StatusCodes.Status200OK;

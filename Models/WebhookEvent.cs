@@ -41,4 +41,9 @@ public class WebhookEvent
     /// The unique (Marketplacer) Id of the object that the event relates to
     /// </summary>
     public string? WebhookObjectId { get; set; }
+
+    /// <summary>
+    /// The time the webhhook event was created / received locally
+    /// </summary>
+    public string? CreatedAt { get; set; }
 }
