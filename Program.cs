@@ -132,6 +132,7 @@ app.MapPost("/webhook/payload-parse", async (HttpContext httpContext, AppDbConte
     {
         WebhookId = jsonBody!.id,
         Sequence = int.Parse(httpContext.Request.Headers["Marketplacer-Sequence"]!),
+        Originator = httpContext.Request.Headers["Marketplacer-Vertical"].ToString() ?? "NA",
         WebhookPayload = body,
         WebhookEventType = jsonBody!.event_name,
         WebhookObjectType = jsonBody!.payload.data.node.__typename,
