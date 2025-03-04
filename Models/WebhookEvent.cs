@@ -46,4 +46,10 @@ public class WebhookEvent
     /// The time the webhhook event was created / received locally
     /// </summary>
     public string? CreatedAt { get; set; }
+
+    /// <summary>
+    /// The Markerplacer Instance that generated the webhook
+    /// This information is derived from the Marketplacer-Vertical header in the payload
+    /// </summary>
+    public string? Originator { get; set; }
 }
